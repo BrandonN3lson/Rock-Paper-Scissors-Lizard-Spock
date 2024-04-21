@@ -3,16 +3,21 @@
   border: 0;
   box-sizing: border-box;
 }
+
+/* general */
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 16px;
   margin: 16px;
   min-height: 100vh;
   width: 100vw;
   overflow-x: hidden;
   overflow-y: hidden;
 }
+
+/* header */
 header {
   width: 90vw;
   border: 1px solid;
@@ -22,4 +27,54 @@ header {
 header h1 {
   font-size: 48px;
   border-bottom: solid 1px;
+}
+
+/* main content*/
+
+main {
+  align-self: center;
+}
+main section {
+  margin: 32px 0px;
+}
+
+#score-tracker {
+  border: solid 1px;
+}
+
+#score-tracker div {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.score-count {
+  justify-content: center;
+}
+
+/* choice display section*/
+#choice-display {
+  display: flex;
+  font-size: 8rem;
+  justify-content: space-evenly;
+  width: 100vh;
+}
+
+#user-display,
+#opponent-display {
+  width: 180px;
+  height: 180px;
+  border: solid 1px;
+  border-radius: 16px;
+}
+
+/*button section for choices*/
+#button-container {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+#button-container button {
+  font-size: 4rem;
 }
