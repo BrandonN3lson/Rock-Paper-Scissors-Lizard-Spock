@@ -16,6 +16,33 @@
   </head>
   <body>
     <header><h1>Rock, Paper, Scissors, Lizard, Spock</h1></header>
+
+    <main>
+      <!-- score counter -->
+      <section id="score-tracker">
+        <div class="score-count">
+          <div><h2>wins: 0 |</h2></div>
+          <div><h2>loss: 0 |</h2></div>
+          <div><h2>draw: 0</h2></div>
+        </div>
+      </section>
+
+      <!-- choice-display -->
+      <section id="choice-display">
+        <div id="user-display"></div>
+        <h3>vs</h3>
+        <div id="opponent-display"></div>
+      </section>
+
+      <!-- user button section -->
+      <section id="button-container">
+        <button onclick="playGame('rock')">✊</button>
+        <button onclick="playGame('paper')">🖐️</button>
+        <button onclick="playGame('scissors')">✌️</button>
+        <button onclick="playGame('lizard')">🦎</button>
+        <button onclick="playGame('spock')">🖖</button>
+      </section>
+    </main>
   </body>
   <script src="./assets/js/main.js"></script>
 </html>
