@@ -31,7 +31,7 @@ const randomInt = (max) => {
   return Math.floor(Math.random() * max);
 };
 
-// a function to update the display of the user and opponant.
+// a function to update the display image of the user and opponant.
 const updateImage = (userChoice, opponentChoice) => {
   //makes html id into variable to use
   const userDisplay = document.getElementById("user-display");
@@ -46,6 +46,13 @@ const updateImage = (userChoice, opponentChoice) => {
   opponentDisplay.textContent = choiceImage[opponentIndex];
 };
 
+// display result of, You win!, you Lose! or Draw!.
+let winResult = "You Win!";
+let loseResult = "You Lose";
+let drawResult = "It's a Draw!";
+
+let result = document.getElementById("result");
+
 //function to play game
 let playGame = (userChoice) => {
   const randomOponantChoiceInt = randomInt(choices.length);
@@ -58,7 +65,7 @@ let playGame = (userChoice) => {
 
   /*
   Game rules:
-  
+
   rock beats = scissors and lizard
   paper beats = rock and spock
   scissors beats = lizard and paper
@@ -69,77 +76,93 @@ let playGame = (userChoice) => {
   switch (userChoice) {
     case "rock":
       if (opponentChoice === "scissors" || opponentChoice === "lizard") {
+        //win
         updateImage(userChoice, opponentChoice);
-        console.log("You win!");
         updateWin();
+        result.textContent = winResult;
       } else if (userChoice === opponentChoice) {
+        //Draw
         updateImage(userChoice, opponentChoice);
         updatedraws();
-        console.log("Draw!");
+        result.textContent = drawResult;
       } else {
         updateImage(userChoice, opponentChoice);
+        //lose
         updatelosses();
-        console.log("You lose!");
+        result.textContent = loseResult;
       }
       break;
     case "paper":
       if (opponentChoice === "rock" || opponentChoice === "spock") {
+        //win
         updateImage(userChoice, opponentChoice);
         updateWin();
-        console.log("You win!");
+        result.textContent = winResult;
       } else if (userChoice === opponentChoice) {
+        //draw
         updateImage(userChoice, opponentChoice);
         updatedraws();
-        console.log("Draw!");
+        result.textContent = drawResult;
       } else {
+        //lose
         updateImage(userChoice, opponentChoice);
         updatelosses();
-        console.log("You lose!");
+        result.textContent = loseResult;
       }
       break;
     case "scissors":
       if (opponentChoice === "lizard" || opponentChoice === "paper") {
+        //Win
         updateImage(userChoice, opponentChoice);
         updateWin();
-        console.log("You win!");
+        result.textContent = winResult;
       } else if (userChoice === opponentChoice) {
+        //Draw
         updateImage(userChoice, opponentChoice);
         updatedraws();
-        console.log("Draw!");
+        result.textContent = drawResult;
       } else {
+        //Lose
         updateImage(userChoice, opponentChoice);
         updatelosses();
-        console.log("You lose!");
+        result.textContent = loseResult;
       }
       break;
     case "lizard":
       if (opponentChoice === "paper" || opponentChoice === "spock") {
+        //Win
         updateImage(userChoice, opponentChoice);
         updateWin();
-        console.log("You win!");
+        result.textContent = winResult;
       } else if (userChoice === opponentChoice) {
+        //Draw
         updateImage(userChoice, opponentChoice);
         updatedraws();
-        console.log("Draw!");
+        result.textContent = drawResult;
       } else {
+        //Lose
         updateImage(userChoice, opponentChoice);
         updatelosses();
-        console.log("You lose!");
+        result.textContent = loseResult;
       }
       break;
     case "spock":
       if (opponentChoice === "rock" || opponentChoice === "scissors") {
+        //Win
         console.log(`Oponant: ${opponentChoice}`);
+        updateImage(userChoice, opponentChoice);
         updateWin();
-        console.log("You win!");
+        result.textContent = winResult;
       } else if (userChoice === opponentChoice) {
+        //Draw
         updateImage(userChoice, opponentChoice);
         updatedraws();
-        console.log("Draw!");
+        result.textContent = drawResult;
       } else {
+        //Lose
         updateImage(userChoice, opponentChoice);
         updatelosses();
-        console.log("You lose!");
+        result.textContent = loseResult;
       }
       break;
   }
