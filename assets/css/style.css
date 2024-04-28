@@ -20,12 +20,23 @@ body {
   overflow-y: hidden;
 }
 
+main {
+  background-color: #9fa8da;
+  border-radius: 2rem;
+}
+
+h1,
+h2,
+h3 {
+  color: #01579b;
+}
 /* header */
 header {
   width: 90vw;
   border: 1px solid;
   display: flex;
   justify-content: center;
+  background-color: #64b5f6;
 }
 
 header h1 {
@@ -62,6 +73,7 @@ main section {
   justify-content: center;
   align-content: center;
   font-size: 30px;
+  height: 80px;
 }
 
 /* choice display section*/
@@ -74,10 +86,15 @@ main section {
 
 #user-display,
 #opponent-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 180px;
   height: 180px;
-  border: solid 1px;
+  border: solid 6px;
+  border-color: #595e7f;
   border-radius: 16px;
+  background-color: #777da4;
 }
 
 #choice-display h3 {
@@ -94,5 +111,12 @@ main section {
 
 #button-container button {
   font-size: 4rem;
-  background-color: #db4437;
+  border: 5px solid #d84315;
+  background-color: #ff5722;
+  cursor: pointer;
+  transition: border-color 0.5s ease;
+}
+
+#button-container button:hover {
+  background-color: #ff7043;
 }
