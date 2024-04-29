@@ -7,26 +7,28 @@ let wins = 0;
 let losses = 0;
 let draws = 0;
 
-//score Updating functions
+/**increases score by increments of 1 */
 function updateWin() {
   let userScore = document.getElementById("wins");
   wins++;
   userScore.textContent = wins;
 }
 
+/**increases losses by increments of 1 */
 function updatelosses() {
   let userLosses = document.getElementById("losses");
   losses++;
   userLosses.textContent = losses;
 }
 
+/**increases Draws by increments of 1 */
 function updatedraws() {
   let userDraws = document.getElementById("draws");
   draws++;
   userDraws.textContent = draws;
 }
 
-// function for generating a random integer number (not connected yet to choices)
+/** function for generating a random integer number (not connected yet to choices)*/
 const randomInt = (max) => {
   return Math.floor(Math.random() * max);
 };
@@ -52,6 +54,39 @@ let loseResult = "You Lose";
 let drawResult = "It's a Draw!";
 
 let result = document.getElementById("result");
+
+/**
+ * function to change user display border to green if you win
+ */
+function winBorder() {
+  let userDisplay = document.getElementById("user-display");
+  let opponentDisplay = document.getElementById("opponent-display");
+
+  userDisplay.style.borderColor = "green";
+  opponentDisplay.style.borderColor = "red";
+}
+
+/**
+ * function to change user display border to red if you lose
+ */
+function LoseBorder() {
+  let userDisplay = document.getElementById("user-display");
+  let opponentDisplay = document.getElementById("opponent-display");
+
+  userDisplay.style.borderColor = "red";
+  opponentDisplay.style.borderColor = "green";
+}
+
+/**
+ * function to change user display border to an off white if you Draw
+ */
+function DrawBorder() {
+  let userDisplay = document.getElementById("user-display");
+  let opponentDisplay = document.getElementById("opponent-display");
+
+  userDisplay.style.borderColor = "#d3dde4";
+  opponentDisplay.style.borderColor = "#d3dde4";
+}
 
 //function to play game
 let playGame = (userChoice) => {
@@ -79,16 +114,19 @@ let playGame = (userChoice) => {
         //win
         updateImage(userChoice, opponentChoice);
         updateWin();
+        winBorder();
         result.textContent = winResult;
       } else if (userChoice === opponentChoice) {
         //Draw
         updateImage(userChoice, opponentChoice);
         updatedraws();
+        DrawBorder();
         result.textContent = drawResult;
       } else {
-        updateImage(userChoice, opponentChoice);
         //lose
+        updateImage(userChoice, opponentChoice);
         updatelosses();
+        LoseBorder();
         result.textContent = loseResult;
       }
       break;
@@ -97,16 +135,19 @@ let playGame = (userChoice) => {
         //win
         updateImage(userChoice, opponentChoice);
         updateWin();
+        winBorder();
         result.textContent = winResult;
       } else if (userChoice === opponentChoice) {
         //draw
         updateImage(userChoice, opponentChoice);
         updatedraws();
+        DrawBorder();
         result.textContent = drawResult;
       } else {
         //lose
         updateImage(userChoice, opponentChoice);
         updatelosses();
+        LoseBorder();
         result.textContent = loseResult;
       }
       break;
@@ -115,16 +156,19 @@ let playGame = (userChoice) => {
         //Win
         updateImage(userChoice, opponentChoice);
         updateWin();
+        winBorder();
         result.textContent = winResult;
       } else if (userChoice === opponentChoice) {
         //Draw
         updateImage(userChoice, opponentChoice);
         updatedraws();
+        DrawBorder();
         result.textContent = drawResult;
       } else {
         //Lose
         updateImage(userChoice, opponentChoice);
         updatelosses();
+        LoseBorder();
         result.textContent = loseResult;
       }
       break;
@@ -133,35 +177,40 @@ let playGame = (userChoice) => {
         //Win
         updateImage(userChoice, opponentChoice);
         updateWin();
+        winBorder();
         result.textContent = winResult;
       } else if (userChoice === opponentChoice) {
         //Draw
         updateImage(userChoice, opponentChoice);
         updatedraws();
+        DrawBorder();
         result.textContent = drawResult;
       } else {
         //Lose
         updateImage(userChoice, opponentChoice);
         updatelosses();
+        LoseBorder();
         result.textContent = loseResult;
       }
       break;
     case "spock":
       if (opponentChoice === "rock" || opponentChoice === "scissors") {
         //Win
-        console.log(`Oponant: ${opponentChoice}`);
         updateImage(userChoice, opponentChoice);
         updateWin();
+        winBorder();
         result.textContent = winResult;
       } else if (userChoice === opponentChoice) {
         //Draw
         updateImage(userChoice, opponentChoice);
         updatedraws();
+        DrawBorder();
         result.textContent = drawResult;
       } else {
         //Lose
         updateImage(userChoice, opponentChoice);
         updatelosses();
+        LoseBorder();
         result.textContent = loseResult;
       }
       break;

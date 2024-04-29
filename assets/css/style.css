@@ -102,6 +102,19 @@ main section {
   align-self: center;
 }
 
+/*border colors for win, lose and draw*/
+.win-border {
+  border-color: green;
+}
+
+.lose-border {
+  border-color: red;
+}
+
+.draw-border {
+  border-color: #d3dde4;
+}
+
 /*button section for choices*/
 #button-container {
   display: flex;
