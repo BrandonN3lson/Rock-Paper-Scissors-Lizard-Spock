@@ -2,6 +2,24 @@
 const choices = ["rock", "paper", "scissors", "lizard", "spock"];
 const choiceImage = ["✊", "🖐️", "✌️", "🦎", "🖖"];
 
+//Lives counter.
+let livesRemaining = 5;
+
+function updateHeartDisplay() {
+  let heartDisplay = document.getElementById("heart-display");
+  heartDisplay.textContent = "❤️".repeat(livesRemaining);
+
+  let result = document.getElementById("result");
+
+  if (livesRemaining === 0) {
+    result.textContent = "Game over. You ran out of lives! :(";
+    resetGame();
+  } else {
+    playGame();
+  }
+  livesRemaining--;
+}
+
 //score tracking
 let wins = 0;
 let losses = 0;
@@ -136,6 +154,7 @@ let playGame = (userChoice) => {
         updateImage(userChoice, opponentChoice);
         updatelosses();
         LoseBorder();
+        updateHeartDisplay();
         result.textContent = loseResult;
       }
       break;
@@ -157,6 +176,7 @@ let playGame = (userChoice) => {
         updateImage(userChoice, opponentChoice);
         updatelosses();
         LoseBorder();
+        updateHeartDisplay();
         result.textContent = loseResult;
       }
       break;
@@ -178,6 +198,7 @@ let playGame = (userChoice) => {
         updateImage(userChoice, opponentChoice);
         updatelosses();
         LoseBorder();
+        updateHeartDisplay();
         result.textContent = loseResult;
       }
       break;
@@ -199,6 +220,7 @@ let playGame = (userChoice) => {
         updateImage(userChoice, opponentChoice);
         updatelosses();
         LoseBorder();
+        updateHeartDisplay();
         result.textContent = loseResult;
       }
       break;
@@ -220,8 +242,34 @@ let playGame = (userChoice) => {
         updateImage(userChoice, opponentChoice);
         updatelosses();
         LoseBorder();
+        updateHeartDisplay();
         result.textContent = loseResult;
       }
       break;
   }
 };
+
+function resetGame() {
+  //reset lives and wins, losses and draws.
+  livesRemaining = 5;
+  wins = 0;
+  losses = 0;
+  draws = 0;
+
+  //updating scores.
+  document.getElementById("wins").textContent = wins;
+  document.getElementById("losses").textContent = losses;
+  document.getElementById("draws").textContent = draws;
+
+  //reset lives.
+  document.getElementById("heart-display").textContent = "❤️".repeat(
+    livesRemaining
+  );
+
+  //reset user and opponent displays.
+  document.getElementById("user-display").style.borderColor = "";
+  document.getElementById("user-display").style.backgroundColor = "";
+
+  document.getElementById("opponent-display").style.borderColor = "";
+  document.getElementById("opponent-display").style.backgroundColor = "";
+}

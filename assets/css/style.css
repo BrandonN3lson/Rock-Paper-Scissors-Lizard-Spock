@@ -53,8 +53,15 @@ main {
 main section {
   margin: 32px 0px;
 }
-/*Score traction section*/
+/*Lives remaining section*/
+#lives-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 2px;
+}
 
+/*Score traction section*/
 #score-tracker div {
   display: flex;
   flex-direction: row;
