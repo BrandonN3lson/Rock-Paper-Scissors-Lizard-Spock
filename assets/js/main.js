@@ -33,7 +33,7 @@ const randomInt = (max) => {
   return Math.floor(Math.random() * max);
 };
 
-// a function to update the display image of the user and opponant.
+/**a function to update the display image of the user and opponant. */
 const updateImage = (userChoice, opponentChoice) => {
   //makes html id into variable to use
   const userDisplay = document.getElementById("user-display");
@@ -63,7 +63,10 @@ function winBorder() {
   let opponentDisplay = document.getElementById("opponent-display");
 
   userDisplay.style.borderColor = "green";
+  userDisplay.style.backgroundColor = "#4ab147";
+
   opponentDisplay.style.borderColor = "red";
+  opponentDisplay.style.backgroundColor = "#ce3a0c";
 }
 
 /**
@@ -74,7 +77,10 @@ function LoseBorder() {
   let opponentDisplay = document.getElementById("opponent-display");
 
   userDisplay.style.borderColor = "red";
+  userDisplay.style.backgroundColor = "#ce3a0c";
+
   opponentDisplay.style.borderColor = "green";
+  opponentDisplay.style.backgroundColor = "#4ab147";
 }
 
 /**
@@ -85,7 +91,10 @@ function DrawBorder() {
   let opponentDisplay = document.getElementById("opponent-display");
 
   userDisplay.style.borderColor = "#d3dde4";
+  userDisplay.style.backgroundColor = "#777da4";
+
   opponentDisplay.style.borderColor = "#d3dde4";
+  opponentDisplay.style.backgroundColor = "#777da4";
 }
 
 //function to play game
