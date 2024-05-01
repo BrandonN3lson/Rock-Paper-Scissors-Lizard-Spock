@@ -8,14 +8,12 @@
 body {
   font-family: "bungee", cursive;
   background-color: #4285f4;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 16px;
   margin: 16px;
   min-height: 100vh;
-  width: 100vw;
   overflow-x: hidden;
   overflow-y: hidden;
 }
@@ -27,11 +25,20 @@ main {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
+  text-shadow: 3px 4px 6px rgba(0, 0, 0, 0.6);
   color: #01579b;
+  margin: 0;
+  padding: 0;
+}
+
+#result h4 {
+  color: #000;
 }
 /* header */
 header {
+  text-align: center;
   width: 90vw;
   border: 1px solid;
   display: flex;
@@ -47,12 +54,15 @@ header h1 {
 /* main content*/
 
 main {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
   align-self: center;
   box-shadow: 0px 0px 12px 0px rgb(43, 48, 62);
 }
-main section {
-  margin: 32px 0px;
-}
+
 /*Lives remaining section*/
 #lives-container {
   display: flex;
@@ -65,28 +75,20 @@ main section {
 #score-tracker div {
   display: flex;
   flex-direction: row;
-  gap: 16px;
+  gap: 6px;
 }
 
 .score-count {
   justify-content: center;
+  align-items: center;
 }
 
-/*result section*/
-#result {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  font-size: 30px;
-  height: 80px;
-}
-
-/* choice display section*/
+/*choice display section*/
 #choice-display {
+  gap: 16px;
   display: flex;
   font-size: 8rem;
   justify-content: space-evenly;
-  width: 100vh;
 }
 
 #user-display,
@@ -108,11 +110,21 @@ main section {
   align-self: center;
 }
 
+/*result section*/
+#result {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  text-align: center;
+}
+
 /*button section for choices*/
 #button-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 16px;
+  padding-bottom: 1rem;
 }
 
 #button-container button {
@@ -127,4 +139,61 @@ main section {
 
 #button-container button:hover {
   background-color: #ff7043;
+}
+
+@media screen and (max-width: 768px) {
+  h1,
+  h2,
+  h3 {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-size: 1rem;
+  }
+
+  body {
+    margin: 8px;
+  }
+
+  main {
+    gap: unset;
+  }
+
+  header h1 {
+    font-size: unset;
+  }
+
+  /*choice display section*/
+  #choice-display {
+    gap: unset;
+    display: flex;
+    font-size: 5rem;
+    justify-content: space-evenly;
+    flex-direction: column-reverse;
+  }
+
+  #user-display,
+  #opponent-display {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  #result {
+    font-size: 1rem;
+    height: 46px;
+  }
+
+  #button-container {
+    font-size: 3rem;
+  }
+
+  #button-container button {
+    font-size: 2rem;
+  }
 }
