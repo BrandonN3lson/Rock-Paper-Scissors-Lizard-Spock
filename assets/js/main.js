@@ -2,28 +2,50 @@
 const choices = ["rock", "paper", "scissors", "lizard", "spock"];
 const choiceImage = ["✊", "🖐️", "✌️", "🦎", "🖖"];
 
+//users choice
+let userChoice;
+
 //Lives counter.
 let livesRemaining = 5;
-
-function updateHeartDisplay() {
-  let heartDisplay = document.getElementById("heart-display");
-  heartDisplay.textContent = "❤️".repeat(livesRemaining);
-
-  let result = document.getElementById("result");
-
-  if (livesRemaining === 0) {
-    result.textContent = "Game over. You ran out of lives! :(";
-    resetGame();
-  } else {
-    playGame();
-  }
-  livesRemaining--;
-}
 
 //score tracking
 let wins = 0;
 let losses = 0;
 let draws = 0;
+
+// display result of, You win!, you Lose! or Draw!.
+let winResult = "You Win!";
+let loseResult = "You Lose";
+let drawResult = "It's a Draw!";
+
+let result = document.getElementById("result");
+
+// collectiong all buttons with class of ".btn" and saving their values in an array called userChoice.
+let buttons = document.querySelectorAll(".btn");
+
+for (let i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener("click", function (event) {
+    userChoice = event.target.value;
+    playGame(userChoice);
+  });
+}
+
+function updateHeartDisplay() {
+  let heartDisplay = document.getElementById("heart-display");
+
+  if (livesRemaining === 1) {
+    let result = document.getElementById("result");
+    let gameOver = "Game over. You ran out of lives! :(";
+
+    result.textContent = gameOver;
+    console.log(result.textContent);
+    resetGame();
+  } else {
+    livesRemaining--;
+    heartDisplay.textContent = "❤️".repeat(livesRemaining);
+    updatelosses();
+  }
+}
 
 /**increases score by increments of 1 */
 function updateWin() {
@@ -47,12 +69,12 @@ function updatedraws() {
 }
 
 /** function for generating a random integer number (not connected yet to choices)*/
-const randomInt = (max) => {
+function randomInt(max) {
   return Math.floor(Math.random() * max);
-};
+}
 
 /**a function to update the display image of the user and opponant. */
-const updateImage = (userChoice, opponentChoice) => {
+function updateImage(userChoice, opponentChoice) {
   //makes html id into variable to use
   const userDisplay = document.getElementById("user-display");
   const opponentDisplay = document.getElementById("opponent-display");
@@ -64,14 +86,7 @@ const updateImage = (userChoice, opponentChoice) => {
   //connects index of choice selected to choice images
   userDisplay.textContent = choiceImage[userIndex];
   opponentDisplay.textContent = choiceImage[opponentIndex];
-};
-
-// display result of, You win!, you Lose! or Draw!.
-let winResult = "You Win!";
-let loseResult = "You Lose";
-let drawResult = "It's a Draw!";
-
-let result = document.getElementById("result");
+}
 
 /**
  * function to change user display border to green if you win
@@ -90,7 +105,7 @@ function winBorder() {
 /**
  * function to change user display border to red if you lose
  */
-function LoseBorder() {
+function loseBorder() {
   let userDisplay = document.getElementById("user-display");
   let opponentDisplay = document.getElementById("opponent-display");
 
@@ -104,7 +119,7 @@ function LoseBorder() {
 /**
  * function to change user display border to an off white if you Draw
  */
-function DrawBorder() {
+function drawBorder() {
   let userDisplay = document.getElementById("user-display");
   let opponentDisplay = document.getElementById("opponent-display");
 
@@ -115,10 +130,33 @@ function DrawBorder() {
   opponentDisplay.style.backgroundColor = "#777da4";
 }
 
+function win(userChoice, opponentChoice) {
+  updateImage(userChoice, opponentChoice);
+  updateWin();
+  winBorder();
+  result.textContent = winResult;
+}
+
+function lose(userChoice, opponentChoice) {
+  updateImage(userChoice, opponentChoice);
+  loseBorder();
+  updateHeartDisplay();
+  result.textContent = loseResult;
+}
+
+function draw(userChoice, opponentChoice) {
+  updateImage(userChoice, opponentChoice);
+  updatedraws();
+  drawBorder();
+  result.textContent = drawResult;
+}
+
 //function to play game
-let playGame = (userChoice) => {
+function playGame(userChoice) {
   const randomOponantChoiceInt = randomInt(choices.length);
   const opponentChoice = choices[randomOponantChoiceInt];
+  console.log(opponentChoice);
+  console.log(userChoice);
 
   if (!choices.includes(userChoice)) {
     console.log("unrecognised choice!");
@@ -139,115 +177,65 @@ let playGame = (userChoice) => {
     case "rock":
       if (opponentChoice === "scissors" || opponentChoice === "lizard") {
         //win
-        updateImage(userChoice, opponentChoice);
-        updateWin();
-        winBorder();
-        result.textContent = winResult;
+        win(userChoice, opponentChoice);
       } else if (userChoice === opponentChoice) {
         //Draw
-        updateImage(userChoice, opponentChoice);
-        updatedraws();
-        DrawBorder();
-        result.textContent = drawResult;
+        draw(userChoice, opponentChoice);
       } else {
         //lose
-        updateImage(userChoice, opponentChoice);
-        updatelosses();
-        LoseBorder();
-        updateHeartDisplay();
-        result.textContent = loseResult;
+        lose(userChoice, opponentChoice);
       }
       break;
     case "paper":
       if (opponentChoice === "rock" || opponentChoice === "spock") {
         //win
-        updateImage(userChoice, opponentChoice);
-        updateWin();
-        winBorder();
-        result.textContent = winResult;
+        win(userChoice, opponentChoice);
       } else if (userChoice === opponentChoice) {
-        //draw
-        updateImage(userChoice, opponentChoice);
-        updatedraws();
-        DrawBorder();
-        result.textContent = drawResult;
+        //Draw
+        draw(userChoice, opponentChoice);
       } else {
         //lose
-        updateImage(userChoice, opponentChoice);
-        updatelosses();
-        LoseBorder();
-        updateHeartDisplay();
-        result.textContent = loseResult;
+        lose(userChoice, opponentChoice);
       }
       break;
     case "scissors":
       if (opponentChoice === "lizard" || opponentChoice === "paper") {
-        //Win
-        updateImage(userChoice, opponentChoice);
-        updateWin();
-        winBorder();
-        result.textContent = winResult;
+        //win
+        win(userChoice, opponentChoice);
       } else if (userChoice === opponentChoice) {
         //Draw
-        updateImage(userChoice, opponentChoice);
-        updatedraws();
-        DrawBorder();
-        result.textContent = drawResult;
+        draw(userChoice, opponentChoice);
       } else {
-        //Lose
-        updateImage(userChoice, opponentChoice);
-        updatelosses();
-        LoseBorder();
-        updateHeartDisplay();
-        result.textContent = loseResult;
+        //lose
+        lose(userChoice, opponentChoice);
       }
       break;
     case "lizard":
       if (opponentChoice === "paper" || opponentChoice === "spock") {
-        //Win
-        updateImage(userChoice, opponentChoice);
-        updateWin();
-        winBorder();
-        result.textContent = winResult;
+        //win
+        win(userChoice, opponentChoice);
       } else if (userChoice === opponentChoice) {
         //Draw
-        updateImage(userChoice, opponentChoice);
-        updatedraws();
-        DrawBorder();
-        result.textContent = drawResult;
+        draw(userChoice, opponentChoice);
       } else {
-        //Lose
-        updateImage(userChoice, opponentChoice);
-        updatelosses();
-        LoseBorder();
-        updateHeartDisplay();
-        result.textContent = loseResult;
+        //lose
+        lose(userChoice, opponentChoice);
       }
       break;
     case "spock":
       if (opponentChoice === "rock" || opponentChoice === "scissors") {
-        //Win
-        updateImage(userChoice, opponentChoice);
-        updateWin();
-        winBorder();
-        result.textContent = winResult;
+        //win
+        win(userChoice, opponentChoice);
       } else if (userChoice === opponentChoice) {
         //Draw
-        updateImage(userChoice, opponentChoice);
-        updatedraws();
-        DrawBorder();
-        result.textContent = drawResult;
+        draw(userChoice, opponentChoice);
       } else {
-        //Lose
-        updateImage(userChoice, opponentChoice);
-        updatelosses();
-        LoseBorder();
-        updateHeartDisplay();
-        result.textContent = loseResult;
+        //lose
+        lose(userChoice, opponentChoice);
       }
       break;
   }
-};
+}
 
 function resetGame() {
   //reset lives and wins, losses and draws.
