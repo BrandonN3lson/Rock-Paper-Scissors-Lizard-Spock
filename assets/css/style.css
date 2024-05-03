@@ -11,9 +11,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
   gap: 16px;
   margin: 16px;
-  min-height: 100vh;
   overflow-x: hidden;
   overflow-y: hidden;
 }
@@ -28,7 +28,7 @@ h2,
 h3,
 h4 {
   text-shadow: 3px 4px 6px rgba(0, 0, 0, 0.6);
-  color: #01579b;
+  color: #ffc68a;
   margin: 0;
   padding: 0;
 }
@@ -38,17 +38,16 @@ h4 {
 }
 /* header */
 header {
+  height: 2rem;
   text-align: center;
   width: 90vw;
-  border: 1px solid;
   display: flex;
   justify-content: center;
-  background-color: #64b5f6;
+  align-items: center;
 }
 
 header h1 {
   font-size: 2rem;
-  border-bottom: solid 1px;
 }
 
 /* main content*/
@@ -58,24 +57,37 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
   align-self: center;
+  padding: 1rem;
   box-shadow: 0px 0px 12px 0px rgb(43, 48, 62);
 }
 
 /*Lives remaining section*/
 #lives-container {
+  width: 80%;
   display: flex;
   align-items: center;
   justify-content: center;
   letter-spacing: 2px;
+  text-align: left;
 }
 
-/*Score traction section*/
+#lives-container h2 {
+  width: 18rem;
+}
+/*Score tracking section*/
 #score-tracker div {
   display: flex;
   flex-direction: row;
   gap: 6px;
+}
+
+#wins,
+#losses,
+#draws {
+  margin: 0 10px 0 5px;
+
+  color: white;
 }
 
 .score-count {
@@ -116,6 +128,8 @@ main {
   justify-content: center;
   font-size: 2rem;
   text-align: center;
+  height: 4rem;
+  align-items: center;
 }
 
 /*button section for choices*/
@@ -144,8 +158,51 @@ main {
 @media screen and (max-width: 768px) {
   h1,
   h2,
-  h3 {
-    font-size: 1rem;
+  h3,
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  body {
+    margin: 8px;
+    justify-content: space-evenly;
+  }
+
+  header h1 {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+
+  #lives-container {
+    width: 71%;
+  }
+
+  /*choice display section*/
+  #choice-display {
+    display: flex;
+    font-size: 5rem;
+    justify-content: space-evenly;
+  }
+
+  #user-display,
+  #opponent-display {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  #result {
+    font-size: 2rem;
+    align-items: center;
+    height: 63px;
+  }
+
+  #button-container {
+    font-size: 3rem;
+    width: 80%;
+  }
+
+  #button-container button {
+    font-size: 4rem;
   }
 }
 
@@ -154,19 +211,35 @@ main {
   h2,
   h3,
   h4 {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   body {
-    margin: 8px;
+    margin: 6px;
+    padding: 0;
   }
 
   main {
     gap: unset;
+    padding: 0.5rem;
+  }
+
+  header {
+    height: 2rem;
   }
 
   header h1 {
-    font-size: unset;
+    font-size: 1.1rem;
+  }
+  #lives-container h2 {
+    width: 16rem;
+  }
+
+  #wins,
+  #losses,
+  #draws {
+    color: white;
+    font-size: 1rem;
   }
 
   /*choice display section*/
@@ -191,6 +264,7 @@ main {
 
   #button-container {
     font-size: 3rem;
+    width: unset;
   }
 
   #button-container button {

@@ -34,11 +34,6 @@ function updateHeartDisplay() {
   let heartDisplay = document.getElementById("heart-display");
 
   if (livesRemaining === 1) {
-    let result = document.getElementById("result");
-    let gameOver = "Game over. You ran out of lives! :(";
-
-    result.textContent = gameOver;
-    console.log(result.textContent);
     resetGame();
   } else {
     livesRemaining--;
