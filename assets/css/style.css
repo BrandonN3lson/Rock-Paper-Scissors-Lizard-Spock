@@ -13,7 +13,7 @@ body {
   align-items: center;
   height: 100vh;
   gap: 16px;
-  margin: 16px;
+  padding: 2rem;
   overflow-x: hidden;
   overflow-y: hidden;
 }
@@ -26,7 +26,8 @@ main {
 h1,
 h2,
 h3,
-h4 {
+h4,
+p {
   text-shadow: 3px 4px 6px rgba(0, 0, 0, 0.6);
   color: #ffc68a;
   margin: 0;
@@ -155,6 +156,57 @@ main {
   background-color: #ff7043;
 }
 
+/*rules container*/
+#rules-container {
+  gap: 1rem;
+  align-items: center;
+  width: 45%;
+  background-color: antiquewhite;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  padding: 2rem;
+  top: 10%;
+  border: 5px solid;
+  border-radius: 3rem;
+  box-shadow: 0px 0px 12px 3px rgb(43, 48, 62);
+}
+#rules-container button {
+  font-family: "bungee", cursive;
+  font-size: 2rem;
+  border: 3px solid;
+  border-radius: 1rem;
+  padding: 0px 8px;
+}
+#rules-container > label {
+  font-size: 1.5rem;
+  line-height: 1.25rem;
+}
+#rules-container > input {
+  font-family: "bungee", cursive;
+  border: 2px solid;
+  height: 3rem;
+  border-radius: 1rem;
+  padding: 0 1rem;
+  width: 100%;
+  text-align: center;
+  padding: 0;
+  font-size: 2rem;
+}
+
+#rules-container > h3 {
+  color: #3e3226;
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+#rules-container > ul {
+  padding: 0;
+  list-style: none;
+  line-height: 3rem;
+  font-size: 2rem;
+}
+
 @media screen and (max-width: 768px) {
   h1,
   h2,
@@ -164,7 +216,7 @@ main {
   }
 
   body {
-    margin: 8px;
+    padding: 2rem;
     justify-content: space-evenly;
   }
 
@@ -204,6 +256,16 @@ main {
   #button-container button {
     font-size: 4rem;
   }
+
+  /*Rules section*/
+  #rules-container {
+    width: 95%;
+  }
+
+  #rules-container > button {
+    padding: 0px 8px;
+    font-size: 1.5rem;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -215,8 +277,7 @@ main {
   }
 
   body {
-    margin: 6px;
-    padding: 0;
+    padding: 1rem;
   }
 
   main {
@@ -269,5 +330,26 @@ main {
 
   #button-container button {
     font-size: 2rem;
+  }
+
+  /*Rules section*/
+  #rules-container {
+    width: 95%;
+  }
+
+  #rules-container > button {
+    padding: 0px 8px;
+    font-size: 1rem;
+  }
+
+  #rules-container > ul {
+    padding: 0;
+    list-style: none;
+    line-height: 2rem;
+    font-size: 1.3rem;
+  }
+
+  #rules-container > input {
+    font-size: 1.3rem;
   }
 }
