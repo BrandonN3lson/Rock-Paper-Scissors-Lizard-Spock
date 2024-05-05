@@ -2,8 +2,17 @@
 const choices = ["rock", "paper", "scissors", "lizard", "spock"];
 const choiceImage = ["✊", "🖐️", "✌️", "🦎", "🖖"];
 
+//username
+let username = "";
+
 //users choice
 let userChoice;
+
+//users choice buttons
+let buttons = document.querySelectorAll(".btn");
+
+//start game button on rules container
+let startButton = document.getElementById("start");
 
 //Lives counter.
 let livesRemaining = 5;
@@ -20,8 +29,21 @@ let drawResult = "It's a Draw!";
 
 let result = document.getElementById("result");
 
+//rules and username container
+
+startButton.addEventListener("click", function () {
+  let rulesContainer = document.getElementById("rules-container");
+  let usernameInput = document.getElementById("username");
+  username = usernameInput.value;
+
+  if (username === "") {
+    alert("Please enter a username!");
+  } else {
+    rulesContainer.style.display = "none";
+  }
+});
+
 // collectiong all buttons with class of ".btn" and saving their values in an array called userChoice.
-let buttons = document.querySelectorAll(".btn");
 
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener("click", function (event) {
