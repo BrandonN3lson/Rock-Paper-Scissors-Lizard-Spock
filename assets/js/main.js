@@ -12,7 +12,7 @@ let userChoice;
 let buttons = document.querySelectorAll(".btn");
 
 //start game button on rules container
-let startButton = document.getElementById("start");
+let startButton = document.getElementById("start-button");
 
 //Lives counter.
 let livesRemaining = 5;
@@ -134,7 +134,7 @@ function loseBorder() {
 }
 
 /**
- * function to change user display border to an off white if you Draw
+ * function to change user display border to gray if you Draw
  */
 function drawBorder() {
   let userDisplay = document.getElementById("user-display");
@@ -168,6 +168,10 @@ function draw(userChoice, opponentChoice) {
   result.textContent = drawResult;
 }
 
+//function at end of game to show username and score when lives run out.
+
+function endgame() {}
+
 //function to play game
 function playGame(userChoice) {
   const randomOponantChoiceInt = randomInt(choices.length);
@@ -179,16 +183,6 @@ function playGame(userChoice) {
     console.log("unrecognised choice!");
     return; //Exits function early if userChoice isn't recognised
   }
-
-  /*
-  Game rules:
-
-  rock beats = scissors and lizard
-  paper beats = rock and spock
-  scissors beats = lizard and paper
-  lizard beats = paper and spock
-  spock beat = rock and scissors
-  */
 
   switch (userChoice) {
     case "rock":

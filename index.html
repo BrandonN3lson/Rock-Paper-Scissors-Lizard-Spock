@@ -25,7 +25,13 @@
     <!--Rules section-->
     <section id="rules-container">
       <label for="username">username:</label>
-      <input type="text" name="username" id="username" autocomplete="name" />
+      <input
+        type="text"
+        name="username"
+        id="username"
+        autocomplete="name"
+        required
+      />
 
       <h3>Rules:</h3>
       <ul>
@@ -36,7 +42,7 @@
         <li>🖖 beats ✊ + ✌️</li>
       </ul>
 
-      <button id="start">PlayGame!</button>
+      <button id="start-button">PlayGame!</button>
     </section>
 
     <main>
@@ -78,6 +84,17 @@
         <button class="btn" value="spock" aria-label="spock">🖖</button>
       </section>
     </main>
+
+    <section id="endgame-score-container">
+      <h3>Awh sorry Brandon, you ran out of lives! Your score was:</h3>
+      <ul>
+        <li>Wins: <span id="win-result">0</span></li>
+        <li>losses: <span id="lose-result">0</span></li>
+        <li>draws: <span id="draw-result">0</span></li>
+      </ul>
+
+      <button id="play-again">Play again</button>
+    </section>
   </body>
   <script src="./assets/js/main.js"></script>
 </html>

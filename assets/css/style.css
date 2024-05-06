@@ -207,6 +207,49 @@ main {
   font-size: 2rem;
 }
 
+/*Endgame section*/
+#endgame-score-container {
+  gap: 1rem;
+  align-items: center;
+  width: 45%;
+  background-color: antiquewhite;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  padding: 2rem;
+  top: 10%;
+  border: 5px solid;
+  border-radius: 3rem;
+  box-shadow: 0px 0px 12px 3px rgb(43, 48, 62);
+}
+
+#endgame-score-container > h3 {
+  color: #3e3226;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  text-align: center;
+}
+
+#endgame-score-container > ul {
+  padding: 0;
+  list-style: none;
+  line-height: 3rem;
+  font-size: 2rem;
+}
+
+#play-again {
+  font-family: "bungee", cursive;
+  font-size: 2rem;
+  border: 3px solid;
+  border-radius: 1rem;
+  padding: 0px 8px;
+}
+
+/*hide container*/
+#endgame-score-container {
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   h1,
   h2,
@@ -263,6 +306,16 @@ main {
   }
 
   #rules-container > button {
+    padding: 0px 8px;
+    font-size: 1.5rem;
+  }
+
+  /*endgame-score section*/
+  #endgame-score-container {
+    width: 95%;
+  }
+
+  #endgame-score-container > button {
     padding: 0px 8px;
     font-size: 1.5rem;
   }
@@ -351,5 +404,32 @@ main {
 
   #rules-container > input {
     font-size: 1.3rem;
+  }
+
+  /*endgame score section*/
+  #endgame-score-container {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  #play-again {
+    padding: 0px 8px;
+    font-size: 1rem;
+  }
+
+  #endgame-score-container > ul {
+    padding: 0;
+    list-style: none;
+    line-height: 2rem;
+    font-size: 1.3rem;
+  }
+
+  #endgame-score-container > input {
+    font-size: 1.3rem;
+  }
+
+  #endgame-score-container > h3 {
+    font-size: 1.3rem;
+    line-height: 2rem;
   }
 }
