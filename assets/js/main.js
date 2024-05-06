@@ -267,9 +267,11 @@ function resetGame() {
   //reset user and opponent displays.
   document.getElementById("user-display").style.borderColor = "";
   document.getElementById("user-display").style.backgroundColor = "";
+  document.getElementById("user-display").textContent = "";
 
   document.getElementById("opponent-display").style.borderColor = "";
   document.getElementById("opponent-display").style.backgroundColor = "";
+  document.getElementById("opponent-display").textContent = "";
 }
 
 //function at end of game to show username and score when lives run out.
