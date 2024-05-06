@@ -73,10 +73,11 @@
         <div id="opponent-display"></div>
       </section>
 
-      <section id="result"></section>
+      <section id="result"><h3 class="hidden">Result</h3></section>
 
       <!-- user button section -->
       <section id="button-container">
+        <h3 class="hidden">choice Buttons</h3>
         <button class="btn" value="rock" aria-label="rock">✊</button>
         <button class="btn" value="paper" aria-label="paper">🖐️</button>
         <button class="btn" value="scissors" aria-label="scissors">✌️</button>
@@ -86,7 +87,7 @@
     </main>
 
     <section id="endgame-score-container">
-      <h3 id="result-text"></h3>
+      <h3 id="result-text">Game result</h3>
       <ul>
         <li>Wins: <span id="win-result"></span></li>
         <li>losses: <span id="lose-result"></span></li>
@@ -95,6 +96,7 @@
 
       <button id="play-again">Play again</button>
     </section>
+
+    <script src="./assets/js/main.js"></script>
   </body>
-  <script src="./assets/js/main.js"></script>
 </html>
