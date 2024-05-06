@@ -35,7 +35,7 @@ p {
 }
 
 #result h4 {
-  color: #000;
+  color: #302f2e;
 }
 /* header */
 header {
@@ -156,7 +156,7 @@ main {
   background-color: #ff7043;
 }
 
-/*rules container*/
+/*rules and userame container */
 #rules-container {
   gap: 1rem;
   align-items: center;
@@ -169,7 +169,6 @@ main {
   top: 10%;
   border: 5px solid;
   border-radius: 3rem;
-  box-shadow: 0px 0px 12px 3px rgb(43, 48, 62);
 }
 #rules-container button {
   font-family: "bungee", cursive;
@@ -179,6 +178,7 @@ main {
   padding: 0px 8px;
 }
 #rules-container > label {
+  color: #302f2e;
   font-size: 1.5rem;
   line-height: 1.25rem;
 }
@@ -195,9 +195,10 @@ main {
 }
 
 #rules-container > h3 {
-  color: #3e3226;
+  color: #302f2e;
   font-size: 2rem;
   line-height: 2.5rem;
+  text-shadow: none;
 }
 
 #rules-container > ul {
@@ -220,14 +221,14 @@ main {
   top: 10%;
   border: 5px solid;
   border-radius: 3rem;
-  box-shadow: 0px 0px 12px 3px rgb(43, 48, 62);
 }
 
 #endgame-score-container > h3 {
-  color: #3e3226;
+  color: #302f2e;
   font-size: 2rem;
   line-height: 2.5rem;
   text-align: center;
+  text-shadow: none;
 }
 
 #endgame-score-container > ul {
@@ -242,7 +243,7 @@ main {
   font-size: 2rem;
   border: 3px solid;
   border-radius: 1rem;
-  padding: 0px 8px;
+  padding: 6px;
 }
 
 /*hide container*/
@@ -250,7 +251,9 @@ main {
   display: none;
 }
 
+/*media queries for screens 768px and under*/
 @media screen and (max-width: 768px) {
+  /*general*/
   h1,
   h2,
   h3,
@@ -263,11 +266,13 @@ main {
     justify-content: space-evenly;
   }
 
+  /*Header section*/
   header h1 {
     font-size: 2rem;
     line-height: 2rem;
   }
 
+  /*lives counter section*/
   #lives-container {
     width: 71%;
   }
@@ -279,18 +284,21 @@ main {
     justify-content: space-evenly;
   }
 
+  /*choice display section*/
   #user-display,
   #opponent-display {
     width: 8rem;
     height: 8rem;
   }
 
+  /*Result section*/
   #result {
     font-size: 2rem;
     align-items: center;
     height: 63px;
   }
 
+  /*buttons for choices section*/
   #button-container {
     font-size: 3rem;
     width: 80%;
@@ -300,7 +308,7 @@ main {
     font-size: 4rem;
   }
 
-  /*Rules section*/
+  /*Rules and username section*/
   #rules-container {
     width: 95%;
   }
@@ -315,13 +323,15 @@ main {
     width: 95%;
   }
 
-  #endgame-score-container > button {
+  #play-again {
     padding: 0px 8px;
     font-size: 1.5rem;
   }
 }
 
+/*media query for screen sizes 480px and under*/
 @media screen and (max-width: 480px) {
+  /* general */
   h1,
   h2,
   h3,
@@ -329,15 +339,12 @@ main {
     font-size: 0.9rem;
   }
 
+  /* body section */
   body {
     padding: 1rem;
   }
 
-  main {
-    gap: unset;
-    padding: 0.5rem;
-  }
-
+  /* hearder section */
   header {
     height: 2rem;
   }
@@ -345,10 +352,19 @@ main {
   header h1 {
     font-size: 1.1rem;
   }
+
+  /* main section */
+  main {
+    gap: unset;
+    padding: 0.5rem;
+  }
+
+  /* lives section */
   #lives-container h2 {
     width: 16rem;
   }
 
+  /* score-counter section */
   #wins,
   #losses,
   #draws {
@@ -365,17 +381,24 @@ main {
     flex-direction: column-reverse;
   }
 
+  #choice-display > h3 {
+    line-height: 3rem;
+  }
+
+  /*chocie display section*/
   #user-display,
   #opponent-display {
     width: 6rem;
     height: 6rem;
   }
 
+  /*results section*/
   #result {
     font-size: 1rem;
     height: 46px;
   }
 
+  /*button section*/
   #button-container {
     font-size: 3rem;
     width: unset;
@@ -391,7 +414,7 @@ main {
   }
 
   #rules-container > button {
-    padding: 0px 8px;
+    padding: 6px;
     font-size: 1rem;
   }
 
@@ -413,7 +436,7 @@ main {
   }
 
   #play-again {
-    padding: 0px 8px;
+    padding: 8px;
     font-size: 1rem;
   }
 
