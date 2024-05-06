@@ -1,3 +1,28 @@
+document.addEventListener("DOMContentLoaded", function () {
+  //rules and username container
+
+  startButton.addEventListener("click", function () {
+    let rulesContainer = document.getElementById("rules-container");
+    let usernameInput = document.getElementById("username");
+    username = usernameInput.value;
+
+    if (username === "") {
+      alert("Please enter a username!");
+    } else {
+      rulesContainer.style.display = "none";
+    }
+  });
+
+  // collectiong all buttons with class of ".btn" and saving their values in an array called userChoice.
+
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", function (event) {
+      userChoice = event.target.value;
+      playGame(userChoice);
+    });
+  }
+});
+
 //game choices
 const choices = ["rock", "paper", "scissors", "lizard", "spock"];
 const choiceImage = ["✊", "🖐️", "✌️", "🦎", "🖖"];
@@ -29,33 +54,11 @@ let drawResult = "It's a Draw!";
 
 let result = document.getElementById("result");
 
-//rules and username container
-
-startButton.addEventListener("click", function () {
-  let rulesContainer = document.getElementById("rules-container");
-  let usernameInput = document.getElementById("username");
-  username = usernameInput.value;
-
-  if (username === "") {
-    alert("Please enter a username!");
-  } else {
-    rulesContainer.style.display = "none";
-  }
-});
-
-// collectiong all buttons with class of ".btn" and saving their values in an array called userChoice.
-
-for (let i = 0; i < buttons.length; i++) {
-  buttons[i].addEventListener("click", function (event) {
-    userChoice = event.target.value;
-    playGame(userChoice);
-  });
-}
-
 function updateHeartDisplay() {
   let heartDisplay = document.getElementById("heart-display");
 
   if (livesRemaining === 1) {
+    endgame();
     resetGame();
   } else {
     livesRemaining--;
@@ -168,10 +171,6 @@ function draw(userChoice, opponentChoice) {
   result.textContent = drawResult;
 }
 
-//function at end of game to show username and score when lives run out.
-
-function endgame() {}
-
 //function to play game
 function playGame(userChoice) {
   const randomOponantChoiceInt = randomInt(choices.length);
@@ -271,4 +270,26 @@ function resetGame() {
 
   document.getElementById("opponent-display").style.borderColor = "";
   document.getElementById("opponent-display").style.backgroundColor = "";
+}
+
+//function at end of game to show username and score when lives run out.
+function endgame() {
+  let winResult = document.getElementById("win-result");
+  let loseResult = document.getElementById("lose-result");
+  let drawResult = document.getElementById("draw-result");
+  let playAgain = document.getElementById("play-again");
+  let resultText = document.getElementById("result-text");
+  let endgameScoreContainer = document.getElementById(
+    "endgame-score-container"
+  );
+
+  endgameScoreContainer.style.display = "flex";
+  winResult.textContent = wins;
+  loseResult.textContent = losses;
+  drawResult.textContent = draws;
+  resultText.textContent = `Awh sorry ${username}, you ran out of lives! Your score was:`;
+
+  playAgain.addEventListener("click", function (event) {
+    endgameScoreContainer.style.display = "none";
+  });
 }
