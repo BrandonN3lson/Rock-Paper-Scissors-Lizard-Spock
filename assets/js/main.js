@@ -57,7 +57,7 @@ let result = document.getElementById("result");
 function updateHeartDisplay() {
   let heartDisplay = document.getElementById("heart-display");
 
-  if (livesRemaining === 1) {
+  if (livesRemaining === 0) {
     endgame();
     resetGame();
   } else {

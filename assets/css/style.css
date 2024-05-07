@@ -149,7 +149,7 @@ main {
 }
 
 #button-container button {
-  font-size: 5rem;
+  font-size: 4.5rem;
   border: 5px solid #d84315;
   background-color: #ff5722;
   border-radius: 1rem;
@@ -176,19 +176,22 @@ main {
   border: 5px solid;
   border-radius: 3rem;
 }
-#rules-container button {
+
+#start-button {
   font-family: "bungee", cursive;
   font-size: 2rem;
   border: 3px solid;
   border-radius: 1rem;
   padding: 0px 8px;
 }
-#rules-container > label {
+
+label {
   color: #302f2e;
   font-size: 1.5rem;
   line-height: 1.25rem;
 }
-#rules-container > input {
+
+input {
   font-family: "bungee", cursive;
   border: 2px solid;
   height: 3rem;
@@ -274,7 +277,7 @@ main {
 
   /*Header section*/
   header h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 2rem;
   }
 
@@ -307,11 +310,11 @@ main {
   /*buttons for choices section*/
   #button-container {
     font-size: 3rem;
-    width: 80%;
+    width: 85%;
   }
 
   #button-container button {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 
   /*Rules and username section*/
@@ -319,7 +322,7 @@ main {
     width: 95%;
   }
 
-  #rules-container > button {
+  #start-button {
     padding: 0px 8px;
     font-size: 1.5rem;
   }
@@ -430,11 +433,11 @@ main {
     font-size: 1.3rem;
   }
 
-  #rules-container > input {
+  input {
     font-size: 1.3rem;
   }
 
-  #rules-container > button {
+  #start-button {
     padding: 6px;
     font-size: 1rem;
   }
@@ -454,10 +457,6 @@ main {
     padding: 0;
     list-style: none;
     line-height: 2rem;
-    font-size: 1.3rem;
-  }
-
-  #endgame-score-container > input {
     font-size: 1.3rem;
   }
 
