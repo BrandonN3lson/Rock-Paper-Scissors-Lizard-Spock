@@ -1,28 +1,3 @@
-document.addEventListener("DOMContentLoaded", function () {
-  //rules and username container
-
-  startButton.addEventListener("click", function () {
-    let rulesContainer = document.getElementById("rules-container");
-    let usernameInput = document.getElementById("username");
-    username = usernameInput.value;
-
-    if (username === "") {
-      alert("Please enter a username!");
-    } else {
-      rulesContainer.style.display = "none";
-    }
-  });
-
-  // collectiong buttons clicked with class of ".btn" and saving the value of the clicked button
-  // in an array called userChoice.
-  for (let i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener("click", function (event) {
-      let userChoice = event.target.value;
-      playGame(userChoice);
-    });
-  }
-});
-
 //game choices
 const choices = ["rock", "paper", "scissors", "lizard", "spock"];
 const choiceImage = ["✊", "🖐️", "✌️", "🦎", "🖖"];
@@ -51,10 +26,36 @@ let drawResultText = "It's a Draw!";
 
 let result = document.getElementById("result");
 
+//wait until DOM is fully loaded before running functions.
+document.addEventListener("DOMContentLoaded", function () {
+  //rules and username container
+
+  startButton.addEventListener("click", function () {
+    let rulesContainer = document.getElementById("rules-container");
+    let usernameInput = document.getElementById("username");
+    username = usernameInput.value;
+
+    if (username === "") {
+      alert("Please enter a username!");
+    } else {
+      rulesContainer.style.display = "none";
+    }
+  });
+
+  // collectiong buttons clicked with class of ".btn" and saving the value of the clicked button
+  // in an array called userChoice.
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", function (event) {
+      let userChoice = event.target.value;
+      playGame(userChoice);
+    });
+  }
+});
+
 function updateHeartDisplay() {
   let heartDisplay = document.getElementById("heart-display");
 
-  if (livesRemaining === 0) {
+  if (livesRemaining === 1) {
     endgame();
     resetGame();
   } else {
@@ -172,13 +173,6 @@ function draw(userChoice, opponentChoice) {
 function playGame(userChoice) {
   const randomOponantChoiceInt = randomInt(choices.length);
   const opponentChoice = choices[randomOponantChoiceInt];
-  console.log(opponentChoice);
-  console.log(userChoice);
-
-  if (!choices.includes(userChoice)) {
-    console.log("unrecognised choice!");
-    return; //Exits function early if userChoice isn't recognised
-  }
 
   switch (userChoice) {
     case "rock":
@@ -244,6 +238,7 @@ function playGame(userChoice) {
   }
 }
 
+/**this function resets the game */
 function resetGame() {
   //reset lives and wins, losses and draws.
   livesRemaining = 5;
