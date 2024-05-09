@@ -13,11 +13,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // collectiong all buttons with class of ".btn" and saving their values in an array called userChoice.
-
+  // collectiong buttons clicked with class of ".btn" and saving the value of the clicked button
+  // in an array called userChoice.
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", function (event) {
-      userChoice = event.target.value;
+      let userChoice = event.target.value;
       playGame(userChoice);
     });
   }
@@ -29,9 +29,6 @@ const choiceImage = ["✊", "🖐️", "✌️", "🦎", "🖖"];
 
 //username
 let username = "";
-
-//users choice
-let userChoice;
 
 //users choice buttons
 let buttons = document.querySelectorAll(".btn");
@@ -48,9 +45,9 @@ let losses = 0;
 let draws = 0;
 
 // display result of, You win!, you Lose! or Draw!.
-let winResult = "You Win!";
-let loseResult = "You Lose";
-let drawResult = "It's a Draw!";
+let winResultText = "You Win!";
+let loseResultText = "You Lose";
+let drawResultText = "It's a Draw!";
 
 let result = document.getElementById("result");
 
@@ -154,21 +151,21 @@ function win(userChoice, opponentChoice) {
   updateImage(userChoice, opponentChoice);
   updateWin();
   winBorder();
-  result.textContent = winResult;
+  result.textContent = winResultText;
 }
 
 function lose(userChoice, opponentChoice) {
   updateImage(userChoice, opponentChoice);
   loseBorder();
   updateHeartDisplay();
-  result.textContent = loseResult;
+  result.textContent = loseResultText;
 }
 
 function draw(userChoice, opponentChoice) {
   updateImage(userChoice, opponentChoice);
   updatedraws();
   drawBorder();
-  result.textContent = drawResult;
+  result.textContent = drawResultText;
 }
 
 //function to play game
