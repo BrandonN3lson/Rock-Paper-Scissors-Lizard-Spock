@@ -11,6 +11,10 @@ let buttons = document.querySelectorAll(".btn");
 //start game button on rules container
 let startButton = document.getElementById("start-button");
 
+//user and opponent display
+const userDisplay = document.getElementById("user-display");
+const opponentDisplay = document.getElementById("opponent-display");
+
 //Lives counter.
 let livesRemaining = 5;
 
@@ -67,21 +71,21 @@ function updateHeartDisplay() {
 
 /**increases score by increments of 1 */
 function updateWin() {
-  let userScore = document.getElementById("wins");
+  const userScore = document.getElementById("wins");
   wins++;
   userScore.textContent = wins;
 }
 
 /**increases losses by increments of 1 */
 function updatelosses() {
-  let userLosses = document.getElementById("losses");
+  const userLosses = document.getElementById("losses");
   losses++;
   userLosses.textContent = losses;
 }
 
 /**increases Draws by increments of 1 */
 function updatedraws() {
-  let userDraws = document.getElementById("draws");
+  const userDraws = document.getElementById("draws");
   draws++;
   userDraws.textContent = draws;
 }
@@ -93,10 +97,6 @@ function randomInt(max) {
 
 /**a function to update the display image of the user and opponant. */
 function updateImage(userChoice, opponentChoice) {
-  //makes html id into variable to use
-  const userDisplay = document.getElementById("user-display");
-  const opponentDisplay = document.getElementById("opponent-display");
-
   //gets index of choices user selects
   const userIndex = choices.indexOf(userChoice);
   const opponentIndex = choices.indexOf(opponentChoice);
@@ -110,13 +110,10 @@ function updateImage(userChoice, opponentChoice) {
  * function to change user display border to green if you win
  */
 function winBorder() {
-  let userDisplay = document.getElementById("user-display");
-  let opponentDisplay = document.getElementById("opponent-display");
-
   userDisplay.style.borderColor = "green";
   userDisplay.style.backgroundColor = "#4ab147";
 
-  opponentDisplay.style.borderColor = "red";
+  opponentDisplay.style.borderColor = "#562b2b";
   opponentDisplay.style.backgroundColor = "#ce3a0c";
 }
 
@@ -124,10 +121,7 @@ function winBorder() {
  * function to change user display border to red if you lose
  */
 function loseBorder() {
-  let userDisplay = document.getElementById("user-display");
-  let opponentDisplay = document.getElementById("opponent-display");
-
-  userDisplay.style.borderColor = "red";
+  userDisplay.style.borderColor = "#562b2b";
   userDisplay.style.backgroundColor = "#ce3a0c";
 
   opponentDisplay.style.borderColor = "green";
@@ -138,9 +132,6 @@ function loseBorder() {
  * function to change user display border to gray if you Draw
  */
 function drawBorder() {
-  let userDisplay = document.getElementById("user-display");
-  let opponentDisplay = document.getElementById("opponent-display");
-
   userDisplay.style.borderColor = "#d3dde4";
   userDisplay.style.backgroundColor = "#777da4";
 
@@ -257,13 +248,13 @@ function resetGame() {
   );
 
   //reset user and opponent displays.
-  document.getElementById("user-display").style.borderColor = "";
-  document.getElementById("user-display").style.backgroundColor = "";
-  document.getElementById("user-display").textContent = "";
+  userDisplay.style.borderColor = "";
+  userDisplay.style.backgroundColor = "";
+  userDisplay.textContent = "";
 
-  document.getElementById("opponent-display").style.borderColor = "";
-  document.getElementById("opponent-display").style.backgroundColor = "";
-  document.getElementById("opponent-display").textContent = "";
+  opponentDisplay.style.borderColor = "";
+  opponentDisplay.style.backgroundColor = "";
+  opponentDisplay.textContent = "";
 }
 
 //function at end of game to show username and score when lives run out.
