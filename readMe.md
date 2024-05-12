@@ -10,8 +10,8 @@
 - [Technologies Used](#technologies-used)
 - [Frameworks and programs used](#Frameworks-and-programs-used)
 - [Deployment](#deployment)
+- [Testing and Validating](#testing-and-validating)
 - [References](#references)
-- [Testing and Validating](#Testing-and-Validating)
 
 ## About
 
@@ -124,3 +124,9 @@ For testing and and trouble shooting, i used the chrome dev tools while building
 #### 404 page
 
 - [Wave Evaluation image](./assets/readme-images/wave-validator-index-page.png)
+
+### References
+
+- [Big Bang Theory](https://youtu.be/6s9k5rwBWB4?si=wPdgB2NyYvgMs2my)
+
+- [Stack Overflow](https://stackoverflow.com/)
