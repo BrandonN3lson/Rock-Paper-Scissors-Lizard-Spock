@@ -1,7 +1,7 @@
 # Rock-Paper-Scissors-Lizard-Spock Game
 
 ![Rock-Paper-Scissors-Lizard-Spock index page](assets/readme-images/responsive-image.png)
-[View deployed page](https://brandonn3lson.github.io/Rock-Paper-Scissors-Lizard-Spock/) to see deployed website!
+[Click here](https://brandonn3lson.github.io/Rock-Paper-Scissors-Lizard-Spock/) to see deployed website!
 
 ## Table of Contents
 
@@ -42,11 +42,11 @@ This is a web-based implementation of the popular game Rock-Paper-Scissors-Lizar
 ### design
 
 - [Cooler](https://coolors.co/palettes/popular). The color pallet that was used was created using Cooler
-- Emoji's used for images so design may vary on different platforms.
+- Emoji's used for images so design and layout may vary on different brands of mobile.
   - **Samsung**
-    [samsung mobile]()
+    - [view here](assets/readme-images/samsung-emoji-design.jpg)
   - **Iphone**
-    [Iphone]()
+    - [View here](assets/readme-images/iphone-emoji-design.jpg)
 
 ## Deployment
 
@@ -66,12 +66,19 @@ Github Pages was used to deploy the live website. The instructions to achieve th
 To fork the repository:
 
 1. Log in (or sign up) to Github.
-2. Go to the repository for this project, brandonn3lson/Gym-Ratz.
+2. Go to the repository for this project, brandonn3lson/Rock-Paper-Scissors-Lizard-Spock.
 3. Click the Fork button in the top right corner.
 
 ## Testing and Validating
 
-for testing and and trouble shooting, i used the chrome dev tools while building the website to fix any issues while working through the project.
+For testing and and trouble shooting, i used the chrome dev tools while building the website to fix any issues while working through the project.
+
+### Validators used
+
+- w3c validator
+- jigsaw css validator
+- Jshint
+- Waves
 
 ### W3C validator
 
@@ -88,22 +95,32 @@ for testing and and trouble shooting, i used the chrome dev tools while building
 
 ##### Mobile
 
-    ![lighthouse validator image](./assets/readme-images/lighthouse-mobile-index-page.png)
+![lighthouse validator image](./assets/readme-images/lighthouse-mobile-index-page.png)
 
 ##### Desktop
 
-    ![lighthouse validator image](./assets/readme-images/lighthouse-desktop-index-page.png)
+![lighthouse validator image](./assets/readme-images/lighthouse-desktop-index-page.png)
 
 #### **404 error page**
 
 ##### Mobile
 
-    ![lighthouse validator image](./assets/readme-images/lighthouse-404-page-mobile.png)
+![lighthouse validator image](./assets/readme-images/lighthouse-404-page-mobile.png)
 
 ##### Desktop
 
-    ![lighthouse validator image](./assets/readme-images/lighthouse-404-page-desktop.png)
+![lighthouse validator image](./assets/readme-images/lighthouse-404-page-desktop.png)
 
 ### jshint
 
 ![JavaScript validator image](./assets/readme-images/jshint-validate.png)
+
+### Wave Evauluation tool
+
+#### 404 page
+
+- [Wave Evaluation image](./assets/readme-images/wave-validator-404-page.png)
+
+#### 404 page
+
+- [Wave Evaluation image](./assets/readme-images/wave-validator-index-page.png)
