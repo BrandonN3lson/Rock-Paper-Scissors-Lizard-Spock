@@ -1,5 +1,8 @@
 # Rock-Paper-Scissors-Lizard-Spock Game
 
+![Rock-Paper-Scissors-Lizard-Spock index page](assets/readme-images/responsive-image.png)
+[View deployed page](https://brandonn3lson.github.io/Rock-Paper-Scissors-Lizard-Spock/) to see deployed website!
+
 ## Table of Contents
 
 - [About](#about)
@@ -36,12 +39,21 @@ This is a web-based implementation of the popular game Rock-Paper-Scissors-Lizar
 - git (for version control)
 - github (to save and store project)
 
+### design
+
+- [Cooler](https://coolors.co/palettes/popular). The color pallet that was used was created using Cooler
+- Emoji's used for images so design may vary on different platforms.
+  - **Samsung**
+    [samsung mobile]()
+  - **Iphone**
+    [Iphone]()
+
 ## Deployment
 
 Github Pages was used to deploy the live website. The instructions to achieve this are below:
 
 1. Log in (or sign up) to Github.
-2. Find the repository for this project, Gym Ratz.
+2. Find the repository for this project, Rock-Paper-Scissors-Lizard-Spock.
 3. Click on the Settings link.
 4. Click on the Pages link on the left hand side.
 5. In the Source section, choose main from the drop down select branch menu. Select Root from the drop down select folder menu.
@@ -63,12 +75,12 @@ for testing and and trouble shooting, i used the chrome dev tools while building
 
 ### W3C validator
 
-- [Index Page HTML]()
-- [404 Error Page]()
+- [Index Page HTML](./assets/readme-images/index-page-w3c-validator.png)
+- [404 Error Page](./assets/readme-images/404-page-w3c-validator.png)
 
 ### jigsaw css validator
 
-- [css validator image]()
+- [css validator image](./assets/readme-images/css-validator.png)
 
 ### Lighthouse Analysis Report
 
@@ -76,22 +88,22 @@ for testing and and trouble shooting, i used the chrome dev tools while building
 
 ##### Mobile
 
-    ![lighthouse validator image]()
+    ![lighthouse validator image](./assets/readme-images/lighthouse-mobile-index-page.png)
 
 ##### Desktop
 
-    ![lighthouse validator image]()
+    ![lighthouse validator image](./assets/readme-images/lighthouse-desktop-index-page.png)
 
 #### **404 error page**
 
 ##### Mobile
 
-    ![lighthouse validator image]()
+    ![lighthouse validator image](./assets/readme-images/lighthouse-404-page-mobile.png)
 
 ##### Desktop
 
-    ![lighthouse validator image]()
+    ![lighthouse validator image](./assets/readme-images/lighthouse-404-page-desktop.png)
 
 ### jshint
 
-![JavaScript validator image]()
+![JavaScript validator image](./assets/readme-images/jshint-validate.png)
