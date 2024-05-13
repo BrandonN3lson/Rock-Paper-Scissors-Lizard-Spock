@@ -6,6 +6,7 @@
 ## Table of Contents
 
 - [About](#about)
+- [Design](#design)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Frameworks and programs used](#Frameworks-and-programs-used)
@@ -15,7 +16,27 @@
 
 ## About
 
-This is a web-based implementation of the popular game Rock-Paper-Scissors-Lizard-Spock. It extends the traditional Rock-Paper-Scissors game by adding two more choices, lizard and Spock, as inspired by the TV show "The Big Bang Theory".
+- This is a web-based implementation of the popular game Rock-Paper-Scissors-Lizard-Spock. It extends the traditional Rock-Paper-Scissors game by adding two more choices, lizard and Spock, as inspired by the TV show "The Big Bang Theory".
+
+- The Game is intended for users of all ages, weather it's to have a quick game to pass the time or compete with friends to see who gets the highest score.
+
+## Design
+
+- [Cooler](https://coolors.co/palettes/popular). The color pallet that was used was created using Cooler
+- **Emoji's**
+
+  - used for images so design and layout may vary on different brands of mobile.
+
+    - **Samsung**
+      - [view here](assets/readme-images/samsung-emoji-design.jpg)
+    - **Iphone**
+
+      - [View here](assets/readme-images/iphone-emoji-design.jpg)
+
+- **Balsamiq**
+  - [Username input and rules design](assets/readme-images/balsamiq-username-and%20rules.png)
+  - [Game layout for buttons and display](assets/readme-images/balsamic-game-layout.png)
+  - [End Game Display](assets/readme-images/balsamiq-end-game-display.png)
 
 ## Features
 
@@ -39,15 +60,6 @@ This is a web-based implementation of the popular game Rock-Paper-Scissors-Lizar
 - git (for version control)
 - github (to save and store project)
 
-### design
-
-- [Cooler](https://coolors.co/palettes/popular). The color pallet that was used was created using Cooler
-- Emoji's used for images so design and layout may vary on different brands of mobile.
-  - **Samsung**
-    - [view here](assets/readme-images/samsung-emoji-design.jpg)
-  - **Iphone**
-    - [View here](assets/readme-images/iphone-emoji-design.jpg)
-
 ## Deployment
 
 Github Pages was used to deploy the live website. The instructions to achieve this are below:
@@ -69,64 +81,84 @@ To fork the repository:
 2. Go to the repository for this project, brandonn3lson/Rock-Paper-Scissors-Lizard-Spock.
 3. Click the Fork button in the top right corner.
 
+#### How to Clone
+
+1. Find the repository for this project, Rock-Paper-Scissors-Lizard-Spock.
+
+2. **Get the Clone URL** Click on the green "Code" button and copy the URL that appears.
+
+3. Open Terminal or Command Prompt: Open the Terminal (Mac/Linux) or Command Prompt (Windows).
+
+4. Navigate to the Directory: Use the cd command to go to the folder where you want to put the cloned repository.
+
+5. Clone the Repository: Type git clone, paste the URL you copied, and press Enter.
+
+6. Wait for it to Finish: It might take a moment. Once it's done, you'll see a message.
+
+7. Done!: You now have a copy of the repository on your computer.
+
 ## Testing and Validating
 
 For testing and and trouble shooting, i used the chrome dev tools while building the website to fix any issues while working through the project.
 
 ### Validators used
 
-- w3c validator
+- W3C validator
 - jigsaw css validator
 - Jshint
 - Waves
 
-### W3C validator
+  ## W3C validator
 
-- [Index Page HTML](./assets/readme-images/index-page-w3c-validator.png)
-- [404 Error Page](./assets/readme-images/404-page-w3c-validator.png)
+  - [Index Page HTML](./assets/readme-images/index-page-w3c-validator.png)
+  - [404 Error Page](./assets/readme-images/404-page-w3c-validator.png)
 
-### jigsaw css validator
+  ## jigsaw css validator
 
-- [css validator image](./assets/readme-images/css-validator.png)
+  - [css validator image](./assets/readme-images/css-validator.png)
 
-### Lighthouse Analysis Report
+  ## Lighthouse Analysis Report
 
-#### **Index page**
+  #### **Index page**
 
-##### Mobile
+  - ##### Mobile
 
-![lighthouse validator image](./assets/readme-images/lighthouse-mobile-index-page.png)
+  ![lighthouse validator image](./assets/readme-images/lighthouse-mobile-index-page.png)
 
-##### Desktop
+  - ##### Desktop
 
-![lighthouse validator image](./assets/readme-images/lighthouse-desktop-index-page.png)
+  ![lighthouse validator image](./assets/readme-images/lighthouse-desktop-index-page.png)
 
-#### **404 error page**
+  #### **404 error page**
 
-##### Mobile
+  - ##### Mobile
 
-![lighthouse validator image](./assets/readme-images/lighthouse-404-page-mobile.png)
+  ![lighthouse validator image](./assets/readme-images/lighthouse-404-page-mobile.png)
 
-##### Desktop
+  - ##### Desktop
 
-![lighthouse validator image](./assets/readme-images/lighthouse-404-page-desktop.png)
+  ![lighthouse validator image](./assets/readme-images/lighthouse-404-page-desktop.png)
 
-### jshint
+  ## jshint
 
-![JavaScript validator image](./assets/readme-images/jshint-validate.png)
+  ![JavaScript validator image](./assets/readme-images/jshint-validate.png)
 
-### Wave Evauluation tool
+  ## Wave Evaluation tool
 
-#### 404 page
+  #### 404 page
 
-- [Wave Evaluation image](./assets/readme-images/wave-validator-404-page.png)
+  - [Wave Evaluation image](./assets/readme-images/wave-validator-404-page.png)
 
-#### 404 page
+  #### Index page
 
-- [Wave Evaluation image](./assets/readme-images/wave-validator-index-page.png)
+  - [Wave Evaluation image](./assets/readme-images/wave-validator-index-page.png)
 
-### References
+## References
 
 - [Big Bang Theory](https://youtu.be/6s9k5rwBWB4?si=wPdgB2NyYvgMs2my)
 
-- [Stack Overflow](https://stackoverflow.com/)
+- [ Stack Overflow "eventListener"](https://stackoverflow.com/questions/40956717/how-to-addeventlistener-to-multiple-elements-in-a-single-line): for the buttons i used this to give me an idea of how to add eventListeners to multiple elements.
+
+## Credits
+
+[Code Institute](https://codeinstitute.net/)
