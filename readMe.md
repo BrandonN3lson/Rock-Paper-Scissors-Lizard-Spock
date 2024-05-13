@@ -22,7 +22,12 @@
 
 ## Design
 
-- [Cooler](https://coolors.co/palettes/popular). The color pallet that was used was created using Cooler
+- [Cooler](https://coolors.co/palettes/popular). The color pallet that was used was created using Cooler.
+
+![Rules and username section](assets/readme-images/rules-section%20colors.jpg)
+
+![Main game display](assets/readme-images/game-display-colors.jpg)
+
 - **Emoji's**
 
   - used for images so design and layout may vary on different brands of mobile.
@@ -104,6 +109,24 @@ To fork the repository:
 ## Testing and Validating
 
 For testing and and trouble shooting, i used the chrome dev tools while building the website to fix any issues while working through the project.
+
+## Manaul testing
+
+|    **Features**    |                                                    **Expected Outcome**                                                    |                      **Testing Performed**                       | **Pass/Fail** |
+| :----------------: | :------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------: | :-----------: |
+|   Username Input   |                                               Saves username for end result                                                |                    Typed name into input box                     |     pass      |
+|  Play Game Button  |                          Rules and Username section gets removed and allows you to play the game                           |                          Clicked button                          |     pass      |
+|   "Rock" button    |                                            Display rock emoji un users display                                             |                          Clicked button                          |     pass      |
+|   "Paper" button   |                                            Display paper emoji un users display                                            |                          Clicked button                          |     pass      |
+| "Scissors" button  |                                          Display scissors emoji un users display                                           |                          Clicked button                          |     pass      |
+|  "Lizard" button   |                                           Display Lizard emoji un users display                                            |                          Clicked button                          |     pass      |
+|   "Spock" button   |                                            Display Spock emoji un users display                                            |                          Clicked button                          |     pass      |
+|   Result Display   |                       when you win, lose or draw, it displays "You win", "You lose" or "It’s a Draw                        | played game multiple of times and watched for results to display |     pass      |
+|    User Display    |                            Displays users choice, changes color depend if you win,lose or draw                             |                       Clicked all buttons                        |     pass      |
+|  Opponent Display  |                    Displays Opponents randomly selected choice whenever user clicks any of the choices                     |                       Clicked all buttons                        |     pass      |
+|   Lives Counter    | Whenever opponent wins, user loses a life, as soon as you have no lives left, game is reset and end result is made visible |               played game until I ran out of lives               |     pass      |
+| end-result display |                when you lose, displays username and wins, losses and draws results and button to play again                |                         I lost the game                          |     pass      |
+| Play again button  |                          when clicked it hides the end-result display to allow user to play again                          |                        Clicked the button                        |     pass      |
 
 ### Validators used
 
