@@ -42,11 +42,15 @@
 
 - Players can input their username to start the game.
 
+![username-input](assets/readme-images/username-input.gif)
+
 - Interactive buttons for the player to choose their move.
 - Visual display of the player's choice and the opponent's choice.
 - Lives counter to keep track of the player's remaining lives.
 - Score tracking for wins, losses, and draws.
 - Endgame display showing the final scores and allowing the player to play again.
+
+![username-input](assets/readme-images/gameplay-and-endgame.gif)
 
 ## Technologies Used
 
