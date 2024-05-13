@@ -2,18 +2,25 @@
 const choices = ["rock", "paper", "scissors", "lizard", "spock"];
 const choiceImage = ["✊", "🖐️", "✌️", "🦎", "🖖"];
 
-//username
-let username = "";
+// display result of, You win!, you Lose! or Draw!.
+const winResultText = "You Win!";
+const loseResultText = "You Lose";
+const drawResultText = "It's a Draw!";
+
+const result = document.getElementById("result");
 
 //users choice buttons
-let buttons = document.querySelectorAll(".btn");
+const buttons = document.querySelectorAll(".btn");
 
 //start game button on rules container
-let startButton = document.getElementById("start-button");
+const startButton = document.getElementById("start-button");
 
 //user and opponent display
 const userDisplay = document.getElementById("user-display");
 const opponentDisplay = document.getElementById("opponent-display");
+
+//username
+let username = "";
 
 //Lives counter.
 let livesRemaining = 5;
@@ -22,13 +29,6 @@ let livesRemaining = 5;
 let wins = 0;
 let losses = 0;
 let draws = 0;
-
-// display result of, You win!, you Lose! or Draw!.
-let winResultText = "You Win!";
-let loseResultText = "You Lose";
-let drawResultText = "It's a Draw!";
-
-let result = document.getElementById("result");
 
 //wait until DOM is fully loaded before running functions.
 document.addEventListener("DOMContentLoaded", function () {
